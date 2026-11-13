@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="14dp"
+    android:background="@drawable/bg_card">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+        <ViewFlipper android:id="@+id/flipper" android:layout_width="64dp" android:layout_height="64dp" android:autoStart="true" android:flipInterval="350"/>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="12dp">
+            <TextView android:id="@+id/temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="34sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/city" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="casual" android:textColor="#6B6B6B" android:textSize="13sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+        <TextView android:id="@+id/h0" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="12sp"/>
+        <TextView android:id="@+id/h1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="12sp"/>
+        <TextView android:id="@+id/h2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="12sp"/>
+        <TextView android:id="@+id/h3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="12sp"/>
+        <TextView android:id="@+id/h4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="12sp"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="2dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:background="#2B2B2B"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <TextView android:id="@+id/d0" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="13sp"/>
+        <TextView android:id="@+id/d1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="13sp"/>
+        <TextView android:id="@+id/d2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:fontFamily="casual" android:textColor="#2B2B2B" android:textSize="13sp"/>
+    </LinearLayout>
+</LinearLayout>
