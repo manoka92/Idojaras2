@@ -1,0 +1,35 @@
+name: APK építés
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fájlok rendezése
+        run: |
+          M=app/src/main
+          mkdir -p $M/java/com/example/weatherwidget $M/res/drawable $M/res/layout $M/res/xml $M/res/values
+          mv AndroidManifest.xml $M/
+          mv *.kt $M/java/com/example/weatherwidget/
+          mv bg_card.xml sun_*.xml cloud_*.xml rain_*.xml snow_*.xml $M/res/drawable/
+          mv frame.xml widget.xml $M/res/layout/
+          mv weather_widget_info.xml $M/res/xml/
+          mv strings.xml $M/res/values/
+          mv app-build.gradle.kts app/build.gradle.kts
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.9
+      - name: Építés
+        run: gradle assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: idojaras-widget-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
